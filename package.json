@@ -1,0 +1,51 @@
+{
+  "name": "mira-form-sdk",
+  "version": "1.0.0",
+  "description": "Mira Form API. SDK",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepack": "npm run build",
+    "test": "echo \"Error: no test specified\" > exit 1"
+  },
+  "keywords": [
+    "sdk",
+    "mira-form",
+    "api",
+    "typescript"
+  ],
+  "author": "Your Name <artem@miraspaces.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/mira-form-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/mira-form-sdk/issues"
+  },
+  "homepage": "https://github.com/your-username/mira-form-sdk#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.0"
+  }
+}
