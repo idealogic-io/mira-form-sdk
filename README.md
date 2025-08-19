@@ -1,14 +1,14 @@
 # Mira Form SDK
 
-SDK для интеграции с Mira Form API на TypeScript/JavaScript.
+SDK for Mira Form API на TypeScript/JavaScript.
 
-## Установка
+## Installation
 
 ```bash
 npm install mira-form-sdk
 ```
 
-## Быстрый старт
+## Start Using
 
 ```typescript
 import { MiraFormSDK, MiraFormSDKOptions } from 'mira-form-sdk';
@@ -17,48 +17,42 @@ const sdk = new MiraFormSDK('your-api-key', {
   baseUrl: 'https://api.miraform.com',
   timeout: 5000,
 });
-
-console.log(sdk.ping()); // 'pong'
 ```
 
-## Пример использования
+## Example Usage
 
 ```typescript
 import { MiraFormSDK } from 'mira-form-sdk';
 
-const sdk = new MiraFormSDK('ваш-api-key', { baseUrl: 'https://api.miraform.com' });
+const sdk = new MiraFormSDK('pk_key', { baseUrl: 'https://api.miraform.com' });
 
-// Подготовка данных формы
+// Data preparation
 const { formData, errors } = sdk.prepareFormData({
   resourceId: 'uuid-ресурса',
   formId: 'uuid-формы',
   content: { field1: 'value1', field2: 123 },
-  files: [file1, file2], // опционально
+  files: [file1, file2], // optional
 });
 
 if (errors) {
-  console.error('Ошибки валидации:', errors);
+  console.error('Validation error:', errors);
 } else {
-  // Отправка формы
+  // Form submission
   sdk.sendForm(formData).then(response => {
     if (response.success) {
-      console.log('Успешно отправлено:', response.data);
+      console.log('Success:', response.data);
     } else {
-      console.error('Ошибка отправки:', response.errors);
+      console.error('Error:', response.errors);
     }
   });
 }
 ```
 
-## Документация
-
-- [API Reference](./docs/API.md) — описание методов и типов
-
-## Сборка
+## Build
 
 ```bash
 npm run build
 ```
 
-## Лицензия
+## License
 MIT
