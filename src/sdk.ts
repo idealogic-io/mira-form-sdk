@@ -61,7 +61,7 @@ export class MiraFormSDK {
       const res = await fetch(url, {
         method: 'POST',
         headers: {
-          'Authentication': `Bearer ${this.apiKey}`,
+          'Authorization': `Bearer ${this.apiKey}`,
         },
         body: formData,
       });

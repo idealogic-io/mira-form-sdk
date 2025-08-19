@@ -1,7 +1,7 @@
 {
   "name": "mira-form-sdk",
-  "version": "1.0.0",
-  "description": "Mira Form API. SDK",
+  "version": "1.0.1",
+  "description": "Mira Form API SDK",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
