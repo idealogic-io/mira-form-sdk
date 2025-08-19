@@ -31,21 +31,24 @@ export class MiraFormSDK {
    * @return {PreparedFormData} An object containing the prepared FormData object or error messages if validation fails.
    */
   public prepareFormData(params: PrepareFormDataParams): PreparedFormData {
+    const { resourceId, formId, content, files } = params;
     const errors: string[] = [];
-    if (!params.resourceId) errors.push('resourceId is required');
-    if (!params.formId) errors.push('formId is required');
-    if (params.content && typeof params.content !== 'object') errors.push('content must be a valid object');
+    if (!resourceId) errors.push('resourceId is required');
+    if (!formId) errors.push('formId is required');
+    if (content && typeof content !== 'object') errors.push('content must be a valid object');
     if (errors.length) return { formData: null as any, errors };
 
     const formData = new FormData();
     formData.append('resourceId', params.resourceId);
     formData.append('formId', params.formId);
     formData.append('content', JSON.stringify(params.content));
-    if (params.files) {
-      params.files.forEach((file, idx) => {
-        formData.append(`file_${idx}`, file as any);
-      });
+
+    if (files) {
+      for (const file of files) {
+        formData.append('files', file as any);
+      }
     }
+
     return { formData };
   }
 

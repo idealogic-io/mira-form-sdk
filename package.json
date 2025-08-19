@@ -1,6 +1,6 @@
 {
   "name": "mira-form-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mira Form API SDK",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -27,12 +27,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/mira-form-sdk.git"
+    "url": "git+https://github.com/idealogic-io/mira-form-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/mira-form-sdk/issues"
+    "url": "https://github.com/idealogic-io/mira-form-sdk/issues"
   },
-  "homepage": "https://github.com/your-username/mira-form-sdk#readme",
+  "homepage": "https://github.com/idealogic-io/mira-form-sdk#readme",
   "files": [
     "dist",
     "README.md",
