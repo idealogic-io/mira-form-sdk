@@ -28,8 +28,8 @@ const sdk = new MiraFormSDK('pk_key', { baseUrl: 'https://api.miraform.com' });
 
 // Data preparation
 const { formData, errors } = sdk.prepareFormData({
-  resourceId: 'uuid-ресурса',
-  formId: 'uuid-формы',
+  resourceId: 'uuid',
+  formId: 'uuid',
   content: { field1: 'value1', field2: 123 },
   files: [file1, file2], // optional
 });
