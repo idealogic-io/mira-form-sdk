@@ -1,6 +1,6 @@
 import { MiraCMSOptions, CMSResponse } from './types';
 import { CMS_ENDPOINTS } from './constants';
-import { sendRequest } from './request';
+import { sendRequest } from './request'
 
 /**
  * Represents a resource instance for interacting with CMS content.
@@ -73,5 +73,24 @@ export class MiraCMS {
    */
   public initResource(resourceId: string): MiraResource {
     return new MiraResource(resourceId, this.apiKey, this.options);
+  }
+
+
+  /**
+   * Gets articles indexes for the resource.
+   *
+   * @param {string} key - The key to identify the articles index (e.g., 'blog/articles-index.json').
+   * @param {string} [lang] - Optional language code (e.g., 'en').
+   * @param {number} [page] - Optional page number for pagination.
+   * @param {number} [limit] - Optional limit of items per page.
+   * @param {string[]} resourceIds - The UUID of the resource.
+   * @return {Promise<CMSResponse>} A promise that resolves to the articles indexes data.
+   */
+  public async getAllArticlesIndexes(resourceIds: string[], key: string, page?: number, limit?: number, lang?: string): Promise<CMSResponse> {
+    return sendRequest(
+      CMS_ENDPOINTS.ALL_ARTICLES_INDEXES,
+      { resourceIds, key, lang, page, limit },
+      { baseUrl: this.options.baseUrl!, apiKey: this.apiKey }
+    );
   }
 }

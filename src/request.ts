@@ -12,17 +12,24 @@ export interface RequestBody {
   lang?: string;
 }
 
+export interface ResourceRequestBody {
+  resourceIds: string[];
+  key: string;
+  lang?: string;
+  [key: string]: any;
+}
+
 /**
  * Sends a POST request to the CMS API.
  *
  * @param {string} endpoint - The API endpoint path.
- * @param {RequestBody} body - The request body.
+ * @param {RequestBody | ResourceRequestBody} body - The request body.
  * @param {RequestOptions} options - Request configuration options.
  * @return {Promise<CMSResponse>} A promise that resolves to the API response.
  */
 export async function sendRequest(
   endpoint: string,
-  body: RequestBody,
+  body: RequestBody | ResourceRequestBody,
   options: RequestOptions
 ): Promise<CMSResponse> {
   const url = `${options.baseUrl}${endpoint}`;
