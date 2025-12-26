@@ -93,4 +93,19 @@ export class MiraCMS {
       { baseUrl: this.options.baseUrl!, apiKey: this.apiKey }
     );
   }
+
+  /**
+   * Gets articles indexes for the resource.
+   *
+   * @param {string} key - The key to identify the articles index (e.g., 'blog/articles-index.json').
+   * @param {string[]} resourceIds - The UUID of the resource.
+   * @return {Promise<CMSResponse>} A promise that resolves to the articles indexes data.
+   */
+  public async getAllVersions(resourceIds: string[], key: string): Promise<CMSResponse> {
+    return sendRequest(
+      CMS_ENDPOINTS.ALL_VERSIONS,
+      { resourceIds, key },
+      { baseUrl: this.options.baseUrl!, apiKey: this.apiKey }
+    );
+  }
 }

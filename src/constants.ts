@@ -5,6 +5,7 @@ export const CMS_ENDPOINTS = {
   CATEGORIES: '/api/v1/cms/categories',
   ARTICLES_INDEXES: '/api/v1/cms/articles-indexes',
   ALL_ARTICLES_INDEXES: '/api/v1/cms/all/articles-indexes',
+  ALL_VERSIONS: '/api/v1/cms/all/groups-versions',
 } as const;
 
 /**
