@@ -1,4 +1,3 @@
-
 /**
  * Configuration options for the MiraForm SDK.
  * This interface defines the optional parameters that can be used
@@ -61,5 +60,38 @@ export interface PreparedFormData {
 export interface SendFormResponse {
   success: boolean;
   data?: any;
+  errors?: string[];
+}
+
+/**
+ * Configuration options for the MiraCMS SDK.
+ */
+export interface MiraCMSOptions {
+  baseUrl?: string;
+  timeout?: number;
+}
+
+/**
+ * Parameters for getting articles indexes.
+ */
+export interface GetArticlesIndexesParams {
+  key: string;
+  lang?: string;
+}
+
+/**
+ * Parameters for getting categories.
+ */
+export interface GetCategoriesParams {
+  key: string;
+  lang?: string;
+}
+
+/**
+ * Response from CMS API requests.
+ */
+export interface CMSResponse<T = any> {
+  success: boolean;
+  data?: T;
   errors?: string[];
 }
